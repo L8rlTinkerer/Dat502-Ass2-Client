@@ -11,6 +11,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
   imports: [
     CommonModule,
     CompanyRoutingModule
+  ],
+  exports:[
+    AboutUsComponent,
+    ContactUsComponent
   ]
 })
 export class CompanyModule { }

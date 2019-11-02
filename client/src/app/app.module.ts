@@ -3,16 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './core_modules/layout/layout/layout.component';
+import { HomeModule } from './core_modules/home/home.module';
+import { NavbarModule } from './core_modules/layout/navbar/navbar.module';
+import { FooterModule } from './core_modules/layout/footer/footer.module';
+import { LoginModule } from './core_modules/login/login.module';
+import { RegisterClientModule } from './core_modules/register-client/register-client.module';
+import { DashboardModule } from './core_modules/dashboard/dashboard.module';
+import { CompanyModule } from './core_modules/company/company.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LayoutComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    NavbarModule,
+    FooterModule,
+    LoginModule,
+    RegisterClientModule,
+    DashboardModule,
+    CompanyModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
