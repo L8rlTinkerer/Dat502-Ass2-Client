@@ -1,2 +1,5 @@
-export class Login {
+export class LoginModel {
+    success: boolean; 
+    message: string;
+    jWT: string;
 }
