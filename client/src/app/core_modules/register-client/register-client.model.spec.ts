@@ -1,4 +1,4 @@
-import { RegisterClient } from './register-client.model';
+import { RegisterClient } from './register-client-response.model';
 
 describe('RegisterClient', () => {
   it('should create an instance', () => {

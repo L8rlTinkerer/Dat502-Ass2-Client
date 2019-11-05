@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../core_modules/login/login.model';
-import { RegisterClientModel } from '../core_modules/register-client/register-client.model';
+import { RegisterClientResponseModel } from '../core_modules/register-client/register-client-response.model';
+
 
 @Injectable()
 
@@ -25,11 +26,11 @@ export class AuthenticationService {
         });
     } 
     
-    register(user: any): Observable<RegisterClientModel>{
+    register(user: any): Observable<RegisterClientResponseModel>{
         var headers = new HttpHeaders({
             "Content-Type": "application/json"
         });
-        return this.http.post<RegisterClientModel>(this.baseURL + "register", user, {
+        return this.http.post<RegisterClientResponseModel>(this.baseURL + "register", user, {
             headers: headers
         });
     }

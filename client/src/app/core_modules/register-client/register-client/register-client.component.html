@@ -1,13 +1,24 @@
 <div class="card">
     <article class="card-body">
         <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="first name" name="FirstName" #FirstName ngModel>
+                    <input class="form-control" placeholder="first name" name="FirstName" #FirstName [(ngModel)]="registrationModel.firstName">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.FirstName[0] }}</span>
+                </div>
+                <!-- input-group.// -->
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="last name" name="LastName" #LastName [(ngModel)]="registrationModel.lastName">
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -16,16 +27,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="last name" name="LastName" #LastName ngModel>
-                </div>
-                <!-- input-group.// -->
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="username" name="UserName" #UserName ngModel>
+                    <input class="form-control" placeholder="username" name="UserName" #UserName [(ngModel)]="registrationModel.userName">
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -35,7 +37,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="******" type="password" name="UserPassword" #UserPassword ngModel>
+                    <input class="form-control" placeholder="******" type="password" name="UserPassword" #UserPassword [(ngModel)]="registrationModel.userPassword">
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -44,13 +46,55 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Phone Number" name="PhoneNumber" #PhoneNumber ngModel>
+                    <input class="form-control" placeholder="Phone Number" name="PhoneNumber" #PhoneNumber [(ngModel)]="registrationModel.phoneNumber">
                 </div>
+                <!-- input-group.// -->
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Street Number" name="StreetNumber" #StreetNumber [(ngModel)]="addressModel.streetNumber">                    
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetNumber'][0] }}</span>
+                </div> 
+                <!-- input-group.// -->
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Street Name" name="StreetOrRoadName" #StreetOrRoadName [(ngModel)]="addressModel.streetOrRoadName">
+                </div>
+                <!-- input-group.// -->
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="City/Town Name" name="CityOrTownName" #UCityOrTownName [(ngModel)]="addressModel.cityOrTownName">
+                </div>
+                <!-- input-group.// -->
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="PostCode" name="PostCode" #PostCode [(ngModel)]="addressModel.postCode">
+                </div>
+                
                 <!-- input-group.// -->
             </div>
             <!-- form-group// -->
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
             </div>
             <!-- form-group// -->
             <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>

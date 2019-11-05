@@ -1,7 +1,10 @@
+import { AddressModel } from './address.model';
+
 export class RegisterClientModel {
-    FirstName: string; 	
-    LastName: string; 	
-    UserName: string;  	
-    UserPassword: string; 
-    PhoneNumber: string; 
+    firstName: string;
+    lastName: string;
+    userName: string;
+    userPassword: string;
+    phoneNumber: string;
+    addressNoNavigation: AddressModel;
 }
