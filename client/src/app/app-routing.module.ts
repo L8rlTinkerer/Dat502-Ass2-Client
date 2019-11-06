@@ -6,6 +6,7 @@ import { LoginComponent } from './core_modules/login/login/login.component';
 import { RegisterClientComponent } from './core_modules/register-client/register-client/register-client.component';
 
 
+
 const routes: Routes = [
   { 
     path: '', redirectTo:'/home', pathMatch:'full'
@@ -22,6 +23,8 @@ const routes: Routes = [
   {
     path:"register", component: RegisterClientComponent
   },
+  
+
 
 ];
 

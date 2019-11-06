@@ -30,7 +30,7 @@ export class AuthenticationService {
         var headers = new HttpHeaders({
             "Content-Type": "application/json"
         });
-        return this.http.post<RegisterClientResponseModel>(this.baseURL + "register", user, {
+        return this.http.post<RegisterClientResponseModel>(this.baseURL + "register-client", user, {
             headers: headers
         });
     }

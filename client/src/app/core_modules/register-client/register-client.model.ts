@@ -7,4 +7,6 @@ export class RegisterClientModel {
     userPassword: string;
     phoneNumber: string;
     addressNoNavigation: AddressModel;
+    systemUserTypeNo: number = 4; 
+    
 }

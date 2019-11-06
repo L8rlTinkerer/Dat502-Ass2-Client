@@ -1,6 +1,6 @@
 <div class="card">
     <article class="card-body">
-        <h4 class="card-title text-center mb-4 mt-1">Please fill in the feilds to Register:</h4>
+        <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
         <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
             <div class="form-group">
                 <div class="input-group">
@@ -19,7 +19,6 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="last name" name="LastName" #LastName [(ngModel)]="registrationModel.lastName">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.LastName[0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -29,7 +28,6 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="username" name="UserName" #UserName [(ngModel)]="registrationModel.userName">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.UserName[0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -40,7 +38,6 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input class="form-control" placeholder="******" type="password" name="UserPassword" #UserPassword [(ngModel)]="registrationModel.userPassword">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.UserPassword[0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -50,7 +47,6 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="Phone Number" name="PhoneNumber" #PhoneNumber [(ngModel)]="registrationModel.phoneNumber">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.PhoneNumber[0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -74,7 +70,6 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="Street Name" name="StreetOrRoadName" #StreetOrRoadName [(ngModel)]="addressModel.streetOrRoadName">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetOrRoadName'][0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -84,7 +79,6 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="City/Town Name" name="CityOrTownName" #UCityOrTownName [(ngModel)]="addressModel.cityOrTownName">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.CityOrTownName'][0] }}</span>
                 </div>
                 <!-- input-group.// -->
             </div>
@@ -94,36 +88,10 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input class="form-control" placeholder="PostCode" name="PostCode" #PostCode [(ngModel)]="addressModel.postCode">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.PostCode'][0] }}</span>
                 </div>
                 
                 <!-- input-group.// -->
             </div>
-
-
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Preferred Accomodation Type description" name="PreferredAccomodationType" #PreferredAccomodationType [(ngModel)]="registrationModel.preferredAccomodationType">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.PreferredAccomodationType[0] }}</span>
-                </div>
-                
-                <!-- input-group.// -->
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="MaximumRent" name="MaximumRent" #MaximumRent [(ngModel)]="registrationModel.maximumRent">
-                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.MaximumRent[0] }}</span>
-                </div>
-                
-                <!-- input-group.// -->
-            </div>
-
             <!-- form-group// -->
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -133,5 +101,6 @@
         </form>
     </article>
 </div>
+
 
 

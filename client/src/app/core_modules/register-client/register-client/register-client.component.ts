@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RegisterClientModel } from '../register-client.model';
 import { AddressModel } from '../address.model';
 import { RegisterClientResponseModel } from '../register-client-response.model';
+import { Register2Model } from '../register2.model';
 
 @Component({
   selector: 'app-register-client',
@@ -12,11 +13,11 @@ import { RegisterClientResponseModel } from '../register-client-response.model';
   styleUrls: ['./register-client.component.css']
 })
 export class RegisterClientComponent implements OnInit {
-
-  registrationModel = new RegisterClientModel();
+  registrationModel = new Register2Model();
   addressModel = new AddressModel();
   errorResponseModel = new RegisterClientResponseModel();
   error: boolean = false;
+
 
   constructor(private authService: AuthenticationService, private route: Router) { }
 
@@ -28,21 +29,16 @@ export class RegisterClientComponent implements OnInit {
   register(form: NgForm){
     
     this.registrationModel.addressNoNavigation = this.addressModel;
-    let registerSubmission = this.registrationModel;
-
     
-    //let userRegister = JSON.stringify(form.value);
+    let registerSubmission = this.registrationModel;
 
     this.authService.register(registerSubmission).subscribe((result) => {
       if (result.success){
-        console.log("success");
         this.route.navigate(['/home']);
       }
     }, error => {
         this.error = true;
         this.errorResponseModel = error.error; 
-        
-      console.log(this.errorResponseModel["AddressNoNavigation.PostCode"][0])
     });
     
     
