@@ -18,6 +18,7 @@ export class RegisterClientComponent implements OnInit {
   errorResponseModel = new RegisterClientResponseModel();
   error: boolean = false;
 
+  
 
   constructor(private authService: AuthenticationService, private route: Router) { }
 
@@ -28,10 +29,13 @@ export class RegisterClientComponent implements OnInit {
 
   register(form: NgForm){
     
-    this.registrationModel.addressNoNavigation = this.addressModel;
+    this.registrationModel.AddressNoNavigation = this.addressModel;
+    this.registrationModel.IsActive = 1;
+    this.registrationModel.SystemUserTypeNo = 4;
+    let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
     
-    let registerSubmission = this.registrationModel;
 
+   
     this.authService.register(registerSubmission).subscribe((result) => {
       if (result.success){
         this.route.navigate(['/home']);

@@ -1,15 +1,16 @@
 import { AddressModel } from './address.model';
 
 export class Register2Model {
-    firstName: string;
-    lastName: string;
-    userName: string;
-    userPassword: string;
-    phoneNumber: string;
-    addressNoNavigation: AddressModel;
-    systemUserType: number = 4;
-    preferredAccomodationType: string;
-    maximumRent: number;
+    FirstName: string;
+    LastName: string;
+    UserName: string;
+    UserPassword: string;
+    PhoneNumber: string;
+    SystemUserTypeNo: number;
+    AddressNoNavigation: AddressModel;
+    PreferredAccomodationType: string;
+    MaximumRent: number;
+    IsActive: number;
     
     
 }

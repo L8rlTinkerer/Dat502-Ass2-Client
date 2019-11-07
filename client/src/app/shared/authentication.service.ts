@@ -27,10 +27,11 @@ export class AuthenticationService {
     } 
     
     register(user: any): Observable<RegisterClientResponseModel>{
+        console.log(user);
         var headers = new HttpHeaders({
             "Content-Type": "application/json"
         });
-        return this.http.post<RegisterClientResponseModel>(this.baseURL + "register-client", user, {
+        return this.http.post<RegisterClientResponseModel>(this.baseURL + "register", user, {
             headers: headers
         });
     }
