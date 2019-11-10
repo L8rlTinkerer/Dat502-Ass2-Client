@@ -10,7 +10,6 @@
                     <input class="form-control" placeholder="first name" name="FirstName" #FirstName [(ngModel)]="registrationModel.FirstName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.FirstName[0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
             
             <div class="form-group">
@@ -21,8 +20,8 @@
                     <input class="form-control" placeholder="last name" name="LastName" #LastName [(ngModel)]="registrationModel.LastName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.LastName[0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -31,9 +30,8 @@
                     <input class="form-control" placeholder="username" name="UserName" #UserName [(ngModel)]="registrationModel.UserName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.UserName[0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
-            <!-- form-group// -->
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -42,8 +40,8 @@
                     <input class="form-control" placeholder="******" type="password" name="UserPassword" #UserPassword [(ngModel)]="registrationModel.UserPassword">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.UserPassword[0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -52,9 +50,7 @@
                     <input class="form-control" placeholder="Phone Number" name="PhoneNumber" #PhoneNumber [(ngModel)]="registrationModel.PhoneNumber">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.PhoneNumber[0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
-
 
 
             <div class="form-group">
@@ -65,7 +61,6 @@
                     <input class="form-control" placeholder="Street Number" name="StreetNumber" #StreetNumber [(ngModel)]="addressModel.StreetNumber">                    
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetNumber'][0] }}</span>
                 </div> 
-                <!-- input-group.// -->
             </div>
             
             <div class="form-group">
@@ -76,8 +71,8 @@
                     <input class="form-control" placeholder="Street Name" name="StreetOrRoadName" #StreetOrRoadName [(ngModel)]="addressModel.StreetOrRoadName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetOrRoadName'][0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -86,8 +81,8 @@
                     <input class="form-control" placeholder="City/Town Name" name="CityOrTownName" #UCityOrTownName [(ngModel)]="addressModel.CityOrTownName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.CityOrTownName'][0] }}</span>
                 </div>
-                <!-- input-group.// -->
             </div>
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -96,8 +91,6 @@
                     <input class="form-control" placeholder="PostCode" name="PostCode" #PostCode [(ngModel)]="addressModel.PostCode">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.PostCode'][0] }}</span>
                 </div>
-                
-                <!-- input-group.// -->
             </div>
 
 
@@ -109,9 +102,8 @@
                     <input class="form-control" placeholder="Preferred Accomodation Type description" name="PreferredAccomodationType" #PreferredAccomodationType [(ngModel)]="registrationModel.PreferredAccomodationType">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.PreferredAccomodationType[0] }}</span>
                 </div>
-                
-                <!-- input-group.// -->
             </div>
+
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -120,15 +112,12 @@
                     <input class="form-control" placeholder="MaximumRent" name="MaximumRent" #MaximumRent [(ngModel)]="registrationModel.MaximumRent">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.MaximumRent[0] }}</span>
                 </div>
-                
-                <!-- input-group.// -->
             </div>
 
-            <!-- form-group// -->
+
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </div>
-            <!-- form-group// -->
             <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
         </form>
     </article>

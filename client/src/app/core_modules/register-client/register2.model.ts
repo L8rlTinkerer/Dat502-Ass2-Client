@@ -1,4 +1,5 @@
-import { AddressModel } from './address.model';
+import { AddressModel } from 'src/app/shared/address.model';
+
 
 export class Register2Model {
     FirstName: string;

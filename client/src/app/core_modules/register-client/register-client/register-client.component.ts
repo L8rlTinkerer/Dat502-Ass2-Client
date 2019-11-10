@@ -3,9 +3,10 @@ import { AuthenticationService } from 'src/app/shared/authentication.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterClientModel } from '../register-client.model';
-import { AddressModel } from '../address.model';
+
 import { RegisterClientResponseModel } from '../register-client-response.model';
 import { Register2Model } from '../register2.model';
+import { AddressModel } from 'src/app/shared/address.model';
 
 @Component({
   selector: 'app-register-client',

@@ -8,11 +8,12 @@ import { NavbarModule } from './core_modules/layout/navbar/navbar.module';
 import { FooterModule } from './core_modules/layout/footer/footer.module';
 import { LoginModule } from './core_modules/login/login.module';
 import { RegisterClientModule } from './core_modules/register-client/register-client.module';
-import { DashboardModule } from './core_modules/dashboard/dashboard.module';
+
 import { CompanyModule } from './core_modules/company/company.module';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './shared/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './core_modules/dashboard/dashboard.module';
 
 
 
@@ -29,9 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     LoginModule,
     RegisterClientModule,
-    DashboardModule,
     CompanyModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule
 
   ],
   providers: [

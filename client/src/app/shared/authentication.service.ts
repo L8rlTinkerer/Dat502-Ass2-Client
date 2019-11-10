@@ -10,7 +10,7 @@ import { RegisterClientResponseModel } from '../core_modules/register-client/reg
 export class AuthenticationService {
 
     baseURL: string = "https://localhost:5001/api/systemuser/";
-    
+    propertyBaseURL: string = "https://localhost:5001/api/property/";
 
     constructor(private http: HttpClient) {
 
@@ -35,6 +35,18 @@ export class AuthenticationService {
             headers: headers
         });
     }
+
+    /*
+    getClientProperties(client: any): Observable<ClientPropertiesResponseModel>{
+        console.log(client);
+        var headers = new HttpHeaders({
+            "Content-Type": "application/json"
+        });
+        return this.http.get<ClientPropertiesResponseModel>(this.propertyBaseURL + "client-properties/" + client, {
+            headers: headers
+        })  
+    }
+    */
     
 }
 
