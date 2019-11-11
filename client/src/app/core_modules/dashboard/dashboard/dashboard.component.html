@@ -1,2 +1,7 @@
 
-<client-dashboard *ngIf="clientDashboard?.length > 0" [clientDashboard]="clientDashboard"></client-dashboard>
+<!-- <client-dashboard *ngIf="clientDashboard?.length > 0" [clientDashboard]="clientDashboard"></client-dashboard> -->
+<client-dashboard *ngIf="dashboardTypeClient" [clientDashboard]="clientDashboard"></client-dashboard>
+<assistant-dashboard *ngIf="dashboardTypeAssistant"></assistant-dashboard>
+<supervisor-dashboard *ngIf="dashboardTypeSupervisor"></supervisor-dashboard>
+<manager-dashboard *ngIf="dashboardTypeManager"></manager-dashboard>
+<owner-dashboard *ngIf="dashboardTypeOwner"></owner-dashboard>

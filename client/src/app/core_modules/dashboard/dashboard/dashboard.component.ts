@@ -13,7 +13,12 @@ export class DashboardComponent implements OnInit {
   clientDashboard: ClientDashboardModel = new ClientDashboardModel();
 
   dashboardType: string;
-
+  dashboardTypeClient: string;
+  dashboardTypeAssistant: string;
+  dashboardTypeSupervisor: string;
+  dashboardTypeManager: string;
+  dashboardTypeOwner: string;
+  //<client-dashboard *ngIf="clientDashboard?.length > 0" [clientDashboard]="clientDashboard"></client-dashboard>
 
   constructor(private dashBoardService: DashBoardService, private authService: AuthenticationService) { }
 
@@ -28,15 +33,25 @@ export class DashboardComponent implements OnInit {
 
   loadRequiredDashboard(){
     switch(this.dashboardType){
-      case "1": this.loadAssistantDashboard();
+      case "1": 
+        this.dashboardTypeAssistant = this.dashboardType;
+        this.loadAssistantDashboard();
         break;
-      case "2": this.loadSupervisorDashboard();
+      case "2": 
+        this.dashboardTypeSupervisor = this.dashboardType;
+        this.loadSupervisorDashboard();
         break;
-      case "3": this.loadManagerDashboard();
+      case "3": 
+        this.dashboardTypeManager = this.dashboardType;
+        this.loadManagerDashboard();
         break;
-      case "4": this.loadClientDashboard();
+      case "4": 
+        this.dashboardTypeClient = this.dashboardType;
+        this.loadClientDashboard();
         break;
-      case "5": this.loadOwnerDashboard(); 
+      case "5": 
+        this.dashboardTypeOwner = this.dashboardType;
+        this.loadOwnerDashboard(); 
         break;
     }
   }
