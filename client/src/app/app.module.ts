@@ -14,7 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './shared/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './core_modules/dashboard/dashboard.module';
-
+import { DashBoardService } from './shared/dashboard.service';
+import { CookieService } from 'ngx-cookie-service';
+import { RegisterStaffModule } from './core_modules/register-staff/register-staff.module';
 
 
 @NgModule({
@@ -30,13 +32,16 @@ import { DashboardModule } from './core_modules/dashboard/dashboard.module';
     FooterModule,
     LoginModule,
     RegisterClientModule,
+    RegisterStaffModule,
     CompanyModule,
     HttpClientModule,
     DashboardModule
 
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    DashBoardService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

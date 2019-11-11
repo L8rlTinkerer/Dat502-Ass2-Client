@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(userLogin).subscribe((result) => {
       if (result.success){
-        console.log("success");
-        this.route.navigate(['/home']);
+        console.log("login success");
+        this.route.navigate(['/dashboard']);
       }
     }, error => {
         console.log(error.error);

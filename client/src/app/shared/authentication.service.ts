@@ -3,27 +3,33 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../core_modules/login/login.model';
 import { RegisterClientResponseModel } from '../core_modules/register-client/register-client-response.model';
-
+import { tap } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 
 export class AuthenticationService {
 
     baseURL: string = "https://localhost:5001/api/systemuser/";
-    propertyBaseURL: string = "https://localhost:5001/api/property/";
 
-    constructor(private http: HttpClient) {
-
-    }
+    constructor(private http: HttpClient, private cookie: CookieService) {}
 
 
     login(user: any): Observable<LoginModel>{
         var headers = new HttpHeaders({
             "Content-Type": "application/json"
         });
-        return this.http.post<LoginModel>(this.baseURL + "login", user, {
-            headers: headers
-        });
+
+        return this.http.post<LoginModel>(this.baseURL + "login", user, { headers: headers })
+        .pipe(
+            tap(event => {
+                if(event.success){
+                    // store user id in cookie
+                    this.storeUserId(event.userId.toString());
+                    this.storeUserType(event.userType.toString());
+                }
+            })
+        )
     } 
     
     register(user: any): Observable<RegisterClientResponseModel>{
@@ -36,17 +42,26 @@ export class AuthenticationService {
         });
     }
 
-    /*
-    getClientProperties(client: any): Observable<ClientPropertiesResponseModel>{
-        console.log(client);
-        var headers = new HttpHeaders({
-            "Content-Type": "application/json"
-        });
-        return this.http.get<ClientPropertiesResponseModel>(this.propertyBaseURL + "client-properties/" + client, {
-            headers: headers
-        })  
+    storeUserId(id: string){
+        this.cookie.set("userId", id);
+        console.log("was the userId cookie stored: ", this.cookie.get("userId"))
     }
-    */
+
+    storeUserType(id: string){
+        this.cookie.set("userType", id);
+        console.log("was the userType cookie stored: ", this.cookie.get("userType"))
+    }
+
+    getUserId(){
+        console.log("was the userId cookie set: ", this.cookie.get("userId"))
+        return this.cookie.get("userId");
+    }
+
+    getUserType(){
+        console.log("was the userType cookie set: ", this.cookie.get("userType"))
+        return this.cookie.get("userType");
+    }
     
+
 }
 

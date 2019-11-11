@@ -1,1 +1,13 @@
-<p>client-dashboard works!</p>
+<div *ngFor="let item of clientDashboard">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card_title">{{ item.branchNo }}</h5>
+            <h5 class="card_title">{{ item.propertyNo }}</h5>
+            <h5 class="card_title">{{ item.monthlyRentNo }}</h5>
+            <h5 class="card_title">{{ item.numberOfRoomsNo }}</h5>
+            <h5 class="card_title">{{ item.firstName }}</h5>
+            <h5 class="card_title">{{ item.lastName }}</h5>
+            <h5 class="card_title">{{ item.phoneNumber }}</h5>
+        </div>
+    </div>
+</div>
