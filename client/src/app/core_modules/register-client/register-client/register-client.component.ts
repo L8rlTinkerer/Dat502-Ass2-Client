@@ -9,7 +9,7 @@ import { Register2Model } from '../register2.model';
 import { AddressModel } from 'src/app/shared/address.model';
 
 @Component({
-  selector: 'app-register-client',
+  selector: 'register-client',
   templateUrl: './register-client.component.html',
   styleUrls: ['./register-client.component.css']
 })

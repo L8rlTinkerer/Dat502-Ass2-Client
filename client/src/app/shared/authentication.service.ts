@@ -12,6 +12,9 @@ export class AuthenticationService {
 
     baseURL: string = "https://localhost:5001/api/systemuser/";
 
+    loginStatus: boolean = false;
+
+
     constructor(private http: HttpClient, private cookie: CookieService) {}
 
 
@@ -27,6 +30,7 @@ export class AuthenticationService {
                     // store user id in cookie
                     this.storeUserId(event.userId.toString());
                     this.storeUserType(event.userType.toString());
+                    this.userIsLoggedIn();
                 }
             })
         )
@@ -60,6 +64,16 @@ export class AuthenticationService {
     getUserType(){
         console.log("was the userType cookie set: ", this.cookie.get("userType"))
         return this.cookie.get("userType");
+    }
+
+    userIsLoggedIn(){
+        this.loginStatus = true;
+    }
+
+    logUserOut(){
+        this.cookie.delete("userId");
+        this.loginStatus = false;
+        return this.loginStatus;
     }
     
 

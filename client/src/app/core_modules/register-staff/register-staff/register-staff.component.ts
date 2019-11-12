@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-register-staff',
+  selector: 'register-staff',
   templateUrl: './register-staff.component.html',
   styleUrls: ['./register-staff.component.css']
 })
