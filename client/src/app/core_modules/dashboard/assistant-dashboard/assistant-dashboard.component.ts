@@ -42,5 +42,12 @@ export class AssistantDashboardComponent implements OnInit {
        
   }
 
+  registerOwner(){
+    this.route.navigate(['/register-owner']);
+  }
+
+  CancelRegisterOwner(){
+    this.route.navigate(['/register-owner']);
+  }
 
 }

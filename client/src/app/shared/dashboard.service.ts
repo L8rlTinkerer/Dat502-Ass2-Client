@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ClientDashboardModel } from '../core_modules/dashboard/dashboard/Models/client-dashboard.model';
 import { CreateClientBranchRegoResponseModel } from '../core_modules/dashboard/assistant-dashboard/CreateClientBranchRegoResponseModel.model';
+import { CreateBranchResponseModel } from '../core_modules/dashboard/dashboard/Models/CreateBranchResponseModel.model';
 
 
 @Injectable()
@@ -10,6 +11,7 @@ export class DashBoardService {
 
     baseURL: string = "https://localhost:5001/api/dashboard/";
     baseCBRURL: string = "https://localhost:5001/api/clientbranchregister/";
+    baseBranchURL: string = "https://localhost:5001/api/branch/";
 
     constructor(private http: HttpClient){}
 
@@ -24,6 +26,17 @@ export class DashBoardService {
             "Content-Type": "application/json"
         });
         return this.http.post<CreateClientBranchRegoResponseModel>(this.baseCBRURL + "addclientbranchrego", clientBranchRego, {
+            headers: headers
+        });
+
+    };
+
+    createNewBranch(branchRego: any){
+        console.log(branchRego);
+        var headers = new HttpHeaders({
+            "Content-Type": "application/json"
+        });
+        return this.http.post<CreateBranchResponseModel>(this.baseBranchURL + "addbranch", branchRego, {
             headers: headers
         });
 

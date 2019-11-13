@@ -7,7 +7,7 @@ export class RegisterAssistantModel {
     userName: string;
     userPassword: string;
     phoneNumber: string;
-    systemUserTypeNo: number;
+    SystemUserTypeNo: number;
     addressNoNavigation: AddressModel;
     branchNo: number;
     genderNo: number;

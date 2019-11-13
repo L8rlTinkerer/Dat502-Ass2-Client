@@ -33,6 +33,22 @@
         </form>
     </article>
 </div>
+<span></span>
+<div class="card">
+    <article class="card-body">
+            <h4 class="card-title text-center mb-4 mt-1">Please click the following button to Register an Owner with the company:</h4>
+        <form #registerForm="ngForm" (ngSubmit)="registerOwner()">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Register An Owner</button>
+            </div> 
+        </form>
+        <form #registerForm="ngForm" (ngSubmit)="CancelRegisterOwner()">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Cancel</button>
+                </div> 
+            </form>
+    </article>
+</div>
 
     
     

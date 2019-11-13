@@ -1,1 +1,68 @@
-<p>manager-dashboard works!</p>
+<p>The Manager Dashboard</p>
+
+<div class="card">
+        <article class="card-body">
+            <h4 class="card-title text-center mb-4 mt-1">Please fill in the feilds to Create a New Branch:</h4>
+            <form #registerForm="ngForm" (ngSubmit)="createBranch(registerForm)">
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input class="form-control" placeholder="Street Number" name="StreetNumber" #StreetNumber [(ngModel)]="addressModel.StreetNumber">                    
+                        <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetNumber'][0] }}</span>
+                    </div> 
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input class="form-control" placeholder="Street Name" name="StreetOrRoadName" #StreetOrRoadName [(ngModel)]="addressModel.StreetOrRoadName">
+                        <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetOrRoadName'][0] }}</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input class="form-control" placeholder="City/Town Name" name="CityOrTownName" #UCityOrTownName [(ngModel)]="addressModel.CityOrTownName">
+                        <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.CityOrTownName'][0] }}</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input class="form-control" placeholder="PostCode" name="PostCode" #PostCode [(ngModel)]="addressModel.PostCode">
+                        <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.PostCode'][0] }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="Phone Number eg 02-4332893" name="Phone" #PhoneNumber [(ngModel)]="createBranchModel.Phone">
+                            <span style="color: red;" *ngIf="error">{{ errorResponseModel.Phone[0] }}</span>
+                        </div>
+                    </div>
+    
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Create</button>
+                </div>
+                <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+
+            </form>
+        </article>
+    </div>
+    
+    
+    

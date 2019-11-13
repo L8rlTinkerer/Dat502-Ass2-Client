@@ -27,7 +27,7 @@ export class RegisterAssistantComponent implements OnInit {
     register(form: NgForm){
     
     this.registrationModel.addressNoNavigation = this.addressModel;
-    this.registrationModel.systemUserTypeNo = 1;
+    this.registrationModel.SystemUserTypeNo = 1;
     let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
     
 
@@ -39,6 +39,7 @@ export class RegisterAssistantComponent implements OnInit {
     }, error => {
         this.error = true;
         this.errorResponseModel = error.error; 
+        console.log(error.error);
     });
     
     

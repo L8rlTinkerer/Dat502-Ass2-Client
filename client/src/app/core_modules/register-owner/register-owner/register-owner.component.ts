@@ -25,9 +25,9 @@ export class RegisterOwnerComponent implements OnInit {
 
 
     register(form: NgForm){
-    this.registrationModel.isActive = 1;
-    this.registrationModel.addressNoNavigation = this.addressModel;
-    this.registrationModel.systemUserTypeNo = 5; // change this selection?
+    this.registrationModel.IsActive = 1;
+    this.registrationModel.AddressNoNavigation = this.addressModel;
+    this.registrationModel.SystemUserTypeNo = 5; // change this selection?
 
     let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
    
