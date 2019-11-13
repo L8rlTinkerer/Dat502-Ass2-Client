@@ -14,6 +14,7 @@ export class AuthenticationService {
 
     loginStatus: boolean = false;
 
+    
 
     constructor(private http: HttpClient, private cookie: CookieService) {}
 

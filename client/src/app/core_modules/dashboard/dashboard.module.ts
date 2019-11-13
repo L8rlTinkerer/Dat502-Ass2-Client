@@ -8,6 +8,7 @@ import { AssistantDashboardComponent } from './assistant-dashboard/assistant-das
 import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.compo
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
