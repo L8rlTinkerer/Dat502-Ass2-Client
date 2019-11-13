@@ -16,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './core_modules/dashboard/dashboard.module';
 import { DashBoardService } from './shared/dashboard.service';
 import { CookieService } from 'ngx-cookie-service';
-import { RegisterStaffModule } from './core_modules/register-staff/register-staff.module';
+import { RegisterOwnerModule } from './core_modules/register-owner/register-owner.module';
+import { RegisterAssistantModule } from './core_modules/register-assistant/register-assistant.module';
+import { RegisterSupervisorModule } from './core_modules/register-supervisor/register-supervisor.module';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { RegisterStaffModule } from './core_modules/register-staff/register-staf
     FooterModule,
     LoginModule,
     RegisterClientModule,
-    RegisterStaffModule,
+    RegisterOwnerModule,
+    RegisterAssistantModule,
+    RegisterSupervisorModule,
     CompanyModule,
     HttpClientModule,
     DashboardModule

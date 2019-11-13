@@ -1,7 +1,7 @@
 import { AddressModel } from 'src/app/shared/address.model';
 
 
-export class RegisterSupervisorModel {
+export class RegisterOwnerModel {
     firstName: string;
     lastName: string;
     userName: string;
@@ -9,9 +9,6 @@ export class RegisterSupervisorModel {
     phoneNumber: string;
     systemUserTypeNo: number;
     addressNoNavigation: AddressModel;
-    branchNo: number;
-    genderNo: number;
-    salary: number;
-    
+    isActive: number;
 }
 

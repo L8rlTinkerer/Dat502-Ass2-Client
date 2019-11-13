@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterSupervisorModel } from '../register-supervisor.model';
+import { RegisterOwnerModel } from '../register-owner.model';
 import { AddressModel } from 'src/app/shared/address.model';
-import { RegisterSupervisorResponseModel } from '../register-supervisor-response.model';
+import { RegisterOwnerResponseModel } from '../register-owner-response.model';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'register-supervisor',
-  templateUrl: './register-supervisor.component.html',
-  styleUrls: ['./register-supervisor.component.css']
+  selector: 'register-owner',
+  templateUrl: './register-owner.component.html',
+  styleUrls: ['./register-owner.component.css']
 })
-export class RegisterSupervisorComponent implements OnInit {
-  registrationModel = new RegisterSupervisorModel();
+export class RegisterOwnerComponent implements OnInit {
+  registrationModel = new RegisterOwnerModel();
   addressModel = new AddressModel();
-  errorResponseModel = new RegisterSupervisorResponseModel();
+  errorResponseModel = new RegisterOwnerResponseModel();
   error: boolean = false;
 
 
@@ -25,16 +25,15 @@ export class RegisterSupervisorComponent implements OnInit {
 
 
     register(form: NgForm){
-    
+    this.registrationModel.isActive = 1;
     this.registrationModel.addressNoNavigation = this.addressModel;
-    this.registrationModel.systemUserTypeNo = 2;
-    let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
-    
+    this.registrationModel.systemUserTypeNo = 5; // change this selection?
 
+    let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
    
     this.authService.register(registerSubmission).subscribe((result) => {
       if (result.success){
-        this.route.navigate(['/manager-dashboard']); 
+        this.route.navigate(['/assistant-dashboard']);
       }
     }, error => {
         this.error = true;

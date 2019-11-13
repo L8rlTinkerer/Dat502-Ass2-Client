@@ -10,7 +10,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Enter client username (enter Client1)" name="UserName" #UserName [(ngModel)]="registrationModel.UserName">
+                    <input class="form-control" placeholder="Enter client username (enter Client1)" name="UserName" #UserName [(ngModel)]="registrationModel.userName">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.UserName[0] }}</span>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Enter BranchNo (A number from 1-5)" name="BranchNo" #BranchNo [(ngModel)]="registrationModel.BranchNo">
+                    <input class="form-control" placeholder="Enter BranchNo (A number from 1-5)" name="BranchNo" #BranchNo [(ngModel)]="registrationModel.branchNo">
                     <span style="color: red;" *ngIf="error">{{ errorResponseModel.BranchNo[0] }}</span>
                 </div>
             </div>
@@ -33,6 +33,6 @@
         </form>
     </article>
 </div>
-    
+
     
     
