@@ -19,6 +19,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { RegisterOwnerModule } from './core_modules/register-owner/register-owner.module';
 import { RegisterAssistantModule } from './core_modules/register-assistant/register-assistant.module';
 import { RegisterSupervisorModule } from './core_modules/register-supervisor/register-supervisor.module';
+import { AddviewingModule } from './featured/addviewing/addviewing.module';
 
 
 @NgModule({
@@ -39,8 +40,8 @@ import { RegisterSupervisorModule } from './core_modules/register-supervisor/reg
     RegisterSupervisorModule,
     CompanyModule,
     HttpClientModule,
-    DashboardModule
-
+    DashboardModule,
+    AddviewingModule
   ],
   providers: [
     AuthenticationService,

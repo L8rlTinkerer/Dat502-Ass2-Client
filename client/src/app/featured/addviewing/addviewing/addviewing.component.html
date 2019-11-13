@@ -1,1 +1,56 @@
-<p>addviewing works!</p>
+<div class="card">
+    <article class="card-body">
+            
+        <h4 class="card-title text-center mb-4 mt-1">Please fill in the feilds to Add a Viewing:</h4>
+        <form #registerForm="ngForm" (ngSubmit)="addViewing(registerForm)">
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Enter PropertyNo" name="PropertyNo" #PropertyNo [(ngModel)]="addViewingModel.propertyNo">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.PropertyNo[0] }}</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Enter ClientNo" name="ClientNo" #ClientNo [(ngModel)]="addViewingModel.clientNo">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.ClientNo[0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Enter DateViewed in the folling format: 2019-06-28 " name="DateViewed" #DateViewed [(ngModel)]="addViewingModel.dateViewed">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.DateViewed[0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Enter Client Comment" name="ClientComment" #ClientComment [(ngModel)]="addViewingModel.clientComment">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.ClientComment[0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+            <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+
+        </form>
+    </article>
+</div>
+
+

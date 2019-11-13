@@ -50,4 +50,9 @@ export class AssistantDashboardComponent implements OnInit {
     this.route.navigate(['/register-owner']);
   }
 
+
+  addViewing(form: NgForm){
+    this.route.navigate(['/addviewing']);
+  }
+
 }
