@@ -4,8 +4,8 @@ export class ClientDashboardModel {
     propertyNo: number;
     monthlyRent: number;
     numberOfRooms: number;
-    firstName: string;
-    lastName: string;
-    phoneNumber: string;
+    firstName: string; // staff name
+    lastName: string; // staff name
+    phoneNumber: string; // staff number
 
 }

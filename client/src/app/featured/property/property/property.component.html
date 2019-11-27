@@ -1,0 +1,105 @@
+<p>property works!</p>
+<!-- <p>addproperty works!</p>
+OwnerNo: number;
+BranchNo: number;
+StaffNo: number;
+PropertyTypeNo: number;
+NumberOfRooms: number;
+MonthlyRent: number;
+IsPropertyActive: boolean;
+AddressNoNavigation: AddressModel;  -->
+
+<div class="card">
+    <article class="card-body">
+            
+        <h4 class="card-title text-center mb-4 mt-1">Please fill in the feilds to Add a Property:</h4>
+        <form #addPropertyForm="ngForm" (ngSubmit)="addProperty(addPropertyModel)">
+
+            <div class="form-group">
+                <label for="availableBranches">Select a Branch:</label>
+                <select [(ngModel)]="selectedBranch" name="selectedBranch" class="form-control">
+                    <option *ngFor="let branch of availableBranches" [value]="branch.branchNo">
+                        {{ branch.branchNo }}
+                    </option>
+                </select>   
+            </div>
+
+            <div class="form-group">
+                <label for="availablePropertyTypes">Select a Property Type:</label>
+                <select name="selectedPropertyType" [(ngModel)]="selectedPropertyType" class="form-control">
+                    <option *ngFor="let prptype of availablePropertyTypes" [value]="prptype.propertyTypeNo">
+                        {{ prptype.propertyType }}
+                    </option>
+                </select>   
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Street Number" name="StreetNumber" #StreetNumber [(ngModel)]="addressModel.StreetNumber">                    
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetNumber'][0] }}</span>
+                </div> 
+            </div>
+             
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Street Name" name="StreetOrRoadName" #StreetOrRoadName [(ngModel)]="addressModel.StreetOrRoadName">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.StreetOrRoadName'][0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="City/Town Name" name="CityOrTownName" #UCityOrTownName [(ngModel)]="addressModel.CityOrTownName">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.CityOrTownName'][0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="PostCode" name="PostCode" #PostCode [(ngModel)]="addressModel.PostCode">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel['AddressNoNavigation.PostCode'][0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Number Of Rooms" name="NumberOfRooms" #NumberOfRoomse [(ngModel)]="addPropertyModel.NumberOfRooms">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.NumberOfRooms[0] }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="MonthlyRent" name="MonthlyRent" #MonthlyRent [(ngModel)]="addPropertyModel.MonthlyRent">
+                    <span style="color: red;" *ngIf="error">{{ errorResponseModel.MonthlyRent[0] }}</span>
+                </div>
+            </div> -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+
+        </form>
+    </article>
+</div>
+
+
+

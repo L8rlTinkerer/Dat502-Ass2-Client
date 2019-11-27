@@ -4,6 +4,7 @@ import { HomeComponent } from './core_modules/home/home/home.component';
 
 import { LoginComponent } from './core_modules/login/login/login.component';
 import { DashboardComponent } from './core_modules/dashboard/dashboard/dashboard.component';
+import { PropertyComponent } from './featured/property/property/property.component';
 
 
 
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:"dashboard", component: DashboardComponent
+  },
+  {
+    path:"property", component: PropertyComponent
   },
 ];
 

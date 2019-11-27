@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { ClientDashboardModel } from '../core_modules/dashboard/dashboard/Models/client-dashboard.model';
 import { CreateClientBranchRegoResponseModel } from '../core_modules/dashboard/assistant-dashboard/CreateClientBranchRegoResponseModel.model';
 import { CreateBranchResponseModel } from '../core_modules/dashboard/dashboard/Models/CreateBranchResponseModel.model';
+import { AddPropertyResponse } from '../featured/property/models/addproperty-response.model';
+
 
 
 @Injectable()
@@ -12,6 +14,7 @@ export class DashBoardService {
     baseURL: string = "https://localhost:5001/api/dashboard/";
     baseCBRURL: string = "https://localhost:5001/api/clientbranchregister/";
     baseBranchURL: string = "https://localhost:5001/api/branch/";
+    basePropertyURL: string = "https://localhost:5001/api/property/";
 
     constructor(private http: HttpClient){}
 
@@ -41,5 +44,17 @@ export class DashBoardService {
         });
 
     };
+
+
+    addProperty(newProperty: any){
+        console.log(newProperty);
+        var headers = new HttpHeaders({
+            "Content-Type": "application/json"
+        });
+        return this.http.post<AddPropertyResponse>(this.basePropertyURL + "addproperty", newProperty, {
+            headers: headers
+        });
+    }
+
 
 }

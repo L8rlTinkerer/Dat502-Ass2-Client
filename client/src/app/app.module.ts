@@ -20,6 +20,9 @@ import { RegisterOwnerModule } from './core_modules/register-owner/register-owne
 import { RegisterAssistantModule } from './core_modules/register-assistant/register-assistant.module';
 import { RegisterSupervisorModule } from './core_modules/register-supervisor/register-supervisor.module';
 import { AddviewingModule } from './featured/addviewing/addviewing.module';
+import { BranchService } from './featured/branch/branch.service';
+import { PropertyModule } from './featured/property/property.module';
+import { PropertyService } from './featured/property/property.service';
 
 
 @NgModule({
@@ -41,12 +44,15 @@ import { AddviewingModule } from './featured/addviewing/addviewing.module';
     CompanyModule,
     HttpClientModule,
     DashboardModule,
-    AddviewingModule
+    AddviewingModule,
+    PropertyModule
   ],
   providers: [
     AuthenticationService,
     DashBoardService,
-    CookieService
+    CookieService,
+    BranchService,
+    PropertyService
   ],
   bootstrap: [AppComponent]
 })

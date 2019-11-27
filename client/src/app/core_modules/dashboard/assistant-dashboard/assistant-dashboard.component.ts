@@ -27,7 +27,7 @@ export class AssistantDashboardComponent implements OnInit {
 
   registerClientWithBranch(form: NgForm){
     this.registrationModel.systemUserNo = Number(this.authService.getUserId());
-    console.log("userid: ",this.registrationModel.userName);
+    console.log("staff userid: ",this.registrationModel.userName);
     let registerSubmission = JSON.stringify(JSON.stringify(this.registrationModel));
     
     this.dashboardService.registerClientWithBranch(registerSubmission).subscribe((result) => {
